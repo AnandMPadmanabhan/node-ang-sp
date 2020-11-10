@@ -1,0 +1,20 @@
+<table class="table table-striped">
+        <thead *ngIf="!listFields?.length > 0">
+            <tr>
+                <th scope="col">No Items to Display</th>
+            </tr>
+        </thead>
+        <thead *ngIf="listFields.length > 0">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" *ngFor="let listField of listFields" >{{listField}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listItem of listItems">
+            <th scope="row">*</th>
+            <td *ngFor="let listField of listFields">{{listItem[listField]}}</td>
+          </tr>
+        </tbody>
+      </table>
+     

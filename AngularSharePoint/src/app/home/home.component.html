@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+     <div class="col-sm-12">
+        <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-md-3">
+            <label for="exampleInputEmail1">Site address</label>
+            <input type="text" class="form-control" formControlName ="Site" aria-describedby="emailHelp" placeholder="Enter site">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="exampleInputPassword1">Email</label>
+            <input type="email" class="form-control" formControlName ="Email" placeholder="Email">
+          </div>
+          <div class="form-group col-md-3">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" formControlName ="Password" placeholder="Password">
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+         
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+          <app-site-contents *ngIf="loadComponent"></app-site-contents>
+        </div>
+        <div class="col-sm-8" style="background-color:lavenderblush;">
+          <app-list-items *ngIf="loadlistItems"></app-list-items>
+        </div>
+      </div>
+        </div>
+       
